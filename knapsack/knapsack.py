@@ -143,7 +143,7 @@ def knapsack_solver(items, capacity):
   total_value = 0
   total_weight = 0
   bag = set()
-  sorted_value = sorted(items, key=lambda item: item.value)
+  sorted_value = sorted(items, key=lambda item: item.value, reverse=True) # descending
   
   for item in sorted_value:
     if (total_weight + item.size) <= capacity :
