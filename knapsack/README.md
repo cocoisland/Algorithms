@@ -54,5 +54,5 @@ The idea is that you want to keep the most valueable items as much as possible g
 1. Sort the item list by value descending with max value at the top of the new list.
 2. Loop thru the sorted_by_value list and compare the total_weight plus item weight against capacity
 3. If total_weight + item weight is less than or equal to capacity, 
-3a. add item weight into total weight and item value into total value. Record the item index.
+  - add item weight into total weight and item value into total value. Record the item index.
 
