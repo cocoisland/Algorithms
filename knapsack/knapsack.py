@@ -118,15 +118,15 @@ def knapsack_solver(items, capacity):
 
 
 """
-Incorrect but feasible and efficient solution for the knapsack problem.
+Incorrect but feasible and efficient solution for the knapsack problem. due to sorting weight by value
 """
 # def knapsack_solver(items, capacity):
 #   value = 0
 #   weight = 0
 #   bag = set() 
 #   # Relax the problem by considering items in increasing order of weight by value
-#   norm_items = [Item(item.index, float(item.size) / item.value, item.value) for item in items]
-#   sorted_items = sorted(norm_items, key=lambda item: item.size)
+#   #norm_items = [Item(item.index, float(item.size) / item.value, item.value) for item in items]
+#   sorted_items = sorted(items, key=lambda item: item.value)
 
 #   # Greedy loop, if the item fits in the knapsack, take it
 #   for item in sorted_items:
@@ -137,6 +137,23 @@ Incorrect but feasible and efficient solution for the knapsack problem.
 
 #   return {'Value': value, 'Chosen': sorted(list(bag))}
 
+"""
+Correct if first sort by value, then fit as much as size as possible within weight capacity.
+def knapsack_solver(items, capacity):
+  rvalue = 0
+  rweight = 0
+  bag = set()
+  sorted_value = sorted(items, key=lambda item: item.value)
+  
+  for item in sorted_value:
+    if (weight + item.size) <= capacity :
+      bag.add(item.index)
+      value += item.value
+      weight += item.size
+      
+   return{'Value': value, 'Chosen': sorted(list(bag)))}
+
+"""
 
 if __name__ == '__main__':
   if len(sys.argv) > 1:
