@@ -45,7 +45,9 @@ val = [4,7,10]
 wt = [3,3,5] 
 W =7
 n = len(val) 
-print(knapSack(W, wt, val, n))
+print(knapSack(W, wt, val, n)) 
+  -> correct answer->val(4+7=11) for wt(3+3<7) 
+  -> not correct answer -> val=10 for wt=5
 -------------------------------------
 This following program works.
 # A naive recursive implementation of 0-1 Knapsack Problem 
