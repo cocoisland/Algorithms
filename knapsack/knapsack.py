@@ -140,18 +140,18 @@ Incorrect but feasible and efficient solution for the knapsack problem. due to s
 """
 Correct if first sort by value, then fit as much as size as possible within weight capacity.
 def knapsack_solver(items, capacity):
-  rvalue = 0
-  rweight = 0
+  total_value = 0
+  total_weight = 0
   bag = set()
   sorted_value = sorted(items, key=lambda item: item.value)
   
   for item in sorted_value:
-    if (weight + item.size) <= capacity :
+    if (total_weight + item.size) <= capacity :
       bag.add(item.index)
-      value += item.value
-      weight += item.size
+      total_value += item.value
+      total_weight += item.size
       
-   return{'Value': value, 'Chosen': sorted(list(bag)))}
+   return{'Value': total_value, 'Chosen': sorted(list(bag)))}
 
 """
 
