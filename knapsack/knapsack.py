@@ -46,7 +46,7 @@ weight  value
 4       70
 2       30
 
-Answer=50+70 = 120
+Answer=50+30 = 80
 -----------------------------------------------------------------------------------------
 knapsack_solver answer is wrong. Try the following data for max value return
 val = [4,7,10] 
