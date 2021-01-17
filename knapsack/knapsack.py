@@ -39,6 +39,14 @@ be taking and outputs the combination with the best value.
 #   return {'Value': answer[0], 'Chosen': sorted(list(answer[1]))}
 
 """
+Max weight=5
+weight  value
+5       60
+3       50
+4       70
+2       30
+
+Answer=50+70 = 120
 -----------------------------------------------------------------------------------------
 knapsack_solver answer is wrong. Try the following data for max value return
 val = [4,7,10] 
@@ -137,23 +145,7 @@ Incorrect but feasible and efficient solution for the knapsack problem. due to s
 
 #   return {'Value': value, 'Chosen': sorted(list(bag))}
 
-"""
-Correct if first sort by value, then fit as much as size as possible within weight capacity.
-def knapsack_solver(items, capacity):
-  total_value = 0
-  total_weight = 0
-  bag = set()
-  sorted_value = sorted(items, key=lambda item: item.value, reverse=True) # descending
-  
-  for item in sorted_value:
-    if (total_weight + item.size) <= capacity :
-      bag.add(item.index)
-      total_value += item.value
-      total_weight += item.size
-      
-   return{'Value': total_value, 'Chosen': sorted(list(bag)))}
 
-"""
 
 if __name__ == '__main__':
   if len(sys.argv) > 1:
