@@ -132,6 +132,7 @@ def knapsack_solver(items, capacity):
 # W = 50
 # n = len(val) 
 def knapSack(W, wt, val, n): 
+  # K table is a (weight incremental) x (number of items) matrix
     K = [[0 for x in range(W + 1)] for x in range(n + 1)] 
   
     # Build table K[][] in bottom up manner 
