@@ -40,15 +40,7 @@ be taking and outputs the combination with the best value.
 
 
 -----------------------------------------------------------------------------------------
-knapsack_solver answer is wrong. Try the following data for max value return
-val = [4,7,10] 
-wt = [3,3,5] 
-W =7
-n = len(val) 
-print(knapSack(W, wt, val, n)) 
-  -> correct answer->val(4+7=11) for wt(3+3<7) 
-  -> not correct answer -> val=10 for wt=5
--------------------------------------
+
 This following program works.
 # A naive recursive implementation of 0-1 Knapsack Problem O(2^n)
   
@@ -153,31 +145,6 @@ print(knapSack(W, wt, val, n))
 """
 Incorrect but feasible and efficient solution for the knapsack problem. due to sorting weight by value
 
-Max weight=5
-weight  value
-5       60
-3       50
-4       70
-2       30
-
-Answer=50+30 = 80
-
-=========================
-Possible solution - O(n)
-To find the highest value of each item based on the item weight with respect to Max weight
-(Max Weight- item weight) x item value then sort descending.
-Loop thru the list and add up the item weight until Max weight is reached.
-(5-5)x60 = 0
-(5-3)x50 = 100
-(5-4)x70 = 70
-(5-2)x30 = 90
-
-Sort the new list 
-weight  value CompareMaxWeight  AddValue
-3       50    3 <= 5            50
-2       30    (3+2) <= 5.       (50+30) Exit and return value 80
-4       70
-5       60
 """
 # def knapsack_solver(items, capacity):
 #   value = 0
@@ -200,6 +167,7 @@ weight  value CompareMaxWeight  AddValue
 
 if __name__ == '__main__':
   if len(sys.argv) > 1:
+  '''
     capacity = int(sys.argv[2])
     file_location = sys.argv[1].strip()
     file_contents = open(file_location, 'r')
@@ -210,6 +178,13 @@ if __name__ == '__main__':
       items.append(Item(int(data[0]), int(data[1]), int(data[2])))
     
     file_contents.close()
+    '''
+    items=[]
+    # Item = namedtuple('Item', ['index', 'size', 'value'])
+    items.append(Item(0,3,4))
+    items.append(Item(1,3,7))
+    items.append(Item(2,5,10))
+    capacity=7
     print(knapsack_solver(items, capacity))
   else:
     print('Usage: knapsack.py [filename] [capacity]')
