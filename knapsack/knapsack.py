@@ -38,32 +38,7 @@ be taking and outputs the combination with the best value.
 #   answer = knapsack_rec(items, capacity)
 #   return {'Value': answer[0], 'Chosen': sorted(list(answer[1]))}
 
-"""
-Max weight=5
-weight  value
-5       60
-3       50
-4       70
-2       30
 
-Answer=50+30 = 80
-
-=========================
-Possible solution - O(n)
-To find the highest value of each item based on the item weight with respect to Max weight
-(Max Weight- item weight) x item value then sort descending.
-Loop thru the list and add up the item weight until Max weight is reached.
-(5-5)x60 = 0
-(5-3)x50 = 100
-(5-4)x70 = 70
-(5-2)x30 = 90
-
-Sort the new list 
-weight  value CompareMaxWeight  AddValue
-3       50    3 <= 5            50
-2       30    (3+2) <= 5.       (50+30) Exit and return value 80
-4       70
-5       60
 -----------------------------------------------------------------------------------------
 knapsack_solver answer is wrong. Try the following data for max value return
 val = [4,7,10] 
@@ -177,6 +152,32 @@ print(knapSack(W, wt, val, n))
 '''
 """
 Incorrect but feasible and efficient solution for the knapsack problem. due to sorting weight by value
+
+Max weight=5
+weight  value
+5       60
+3       50
+4       70
+2       30
+
+Answer=50+30 = 80
+
+=========================
+Possible solution - O(n)
+To find the highest value of each item based on the item weight with respect to Max weight
+(Max Weight- item weight) x item value then sort descending.
+Loop thru the list and add up the item weight until Max weight is reached.
+(5-5)x60 = 0
+(5-3)x50 = 100
+(5-4)x70 = 70
+(5-2)x30 = 90
+
+Sort the new list 
+weight  value CompareMaxWeight  AddValue
+3       50    3 <= 5            50
+2       30    (3+2) <= 5.       (50+30) Exit and return value 80
+4       70
+5       60
 """
 # def knapsack_solver(items, capacity):
 #   value = 0
