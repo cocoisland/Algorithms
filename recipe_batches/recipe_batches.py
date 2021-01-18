@@ -8,19 +8,17 @@ import math
 
 def recipe_batches(recipe, ingredients):
   recipeKeys = recipe.keys()
-  batchPass = 0
-  batches = 0
+  maxBatch = 0
+  batchCount = 0
 
   for k in recipeKeys:
     if k in ingredients:
-      batchPass = ingredients[k] // recipe[k]
-      if batches == 0:
-        batches = batchPass
-      elif batches > batchPass:
-        batches = batchPass
+      batchCount = ingredients[k] // recipe[k]
+      
+      if batchCount > maxBatch:
+        maxBatch = batchCount
     else:
-      batches=0
-      break
+      return 0
   
 
   return batches
