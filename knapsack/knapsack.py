@@ -93,7 +93,7 @@ print knapSack(W, wt, val, n)
 """
 
 
-# Memoized version of our brute-force solution
+# Top down Memoized version of our brute-force solution
 def knapsack_solver(items, capacity):
   cache = [[0] * (capacity + 1) for _ in range(len(items) + 1)]
 
@@ -125,7 +125,7 @@ def knapsack_solver(items, capacity):
   return {'Value': answer[0], 'Chosen': sorted(list(answer[1]))}
 
 '''
-# Bottom up memoization
+# Bottom up subproblem method
 # K table tracking value at each incremental Weight for each weight denominations
 # val = [60, 100, 120] 
 # wt = [10, 20, 30] 
