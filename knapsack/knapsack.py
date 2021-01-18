@@ -111,9 +111,9 @@ def knapsack_solver(items, capacity):
 '''
 # Bottom up subproblem method O(mxn) m=Weight, n=len(wt)
 # K table tracking value at each incremental Weight for each weight denominations
-# val = [60, 100, 120] 
-# wt = [10, 20, 30] 
-# W = 50
+# val = [6, 10, 12] 
+# wt = [1, 2, 3] 
+# W = 5
 # n = len(val) 
 def knapSack(W, wt, val, n): 
   # K table is a (weight incremental) x (number of items) matrix
