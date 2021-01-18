@@ -49,7 +49,7 @@ weight  value
 Answer=50+30 = 80
 
 =========================
-Possible solution
+Possible solution - O(n)
 To find the highest value of each item based on the item weight with respect to Max weight
 (Max Weight- item weight) x item value then sort descending.
 Loop thru the list and add up the item weight until Max weight is reached.
@@ -75,7 +75,7 @@ print(knapSack(W, wt, val, n))
   -> not correct answer -> val=10 for wt=5
 -------------------------------------
 This following program works.
-# A naive recursive implementation of 0-1 Knapsack Problem 
+# A naive recursive implementation of 0-1 Knapsack Problem O(2^n)
   
 # Returns the maximum value that can be put in a knapsack of 
 # capacity W 
@@ -110,7 +110,7 @@ print knapSack(W, wt, val, n)
 """
 
 
-# Top down Memoized version of our brute-force solution
+# Top down Memoized version of our brute-force solution O(2^n/2)
 def knapsack_solver(items, capacity):
   cache = [[0] * (capacity + 1) for _ in range(len(items) + 1)]
 
@@ -142,7 +142,7 @@ def knapsack_solver(items, capacity):
   return {'Value': answer[0], 'Chosen': sorted(list(answer[1]))}
 
 '''
-# Bottom up subproblem method
+# Bottom up subproblem method O(mxn) m=Weight, n=len(wt)
 # K table tracking value at each incremental Weight for each weight denominations
 # val = [60, 100, 120] 
 # wt = [10, 20, 30] 
